@@ -55,3 +55,9 @@
 
 ## Configuration
  * @Configuration이 붙은 AppConfig class의 경우 단순한 클래스가 아닌 싱글톤이 보장되도록 스프링에서 자동으로 변경된 클래스가 등록된다.
+
+## @ComponentScan
+ * @Component가 붙은 모든 클래스를 스프링 빈으로 등록한다.
+ * 스프링 빈의 기본 이름은 클래스명을 사용하되 맨 앞글자만 소문자를 사용한다.
+ * @Autowired를 지정하면 스프링 컨테이너가 자동으로 해당 스프링 빈을 찾아서 주입한다.
+
