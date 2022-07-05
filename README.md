@@ -60,4 +60,7 @@
  * @Component가 붙은 모든 클래스를 스프링 빈으로 등록한다.
  * 스프링 빈의 기본 이름은 클래스명을 사용하되 맨 앞글자만 소문자를 사용한다.
  * @Autowired를 지정하면 스프링 컨테이너가 자동으로 해당 스프링 빈을 찾아서 주입한다.
-
+ * basePackages로 탐색위치(패키지) 지정 가능 지정하지 않으면 Default 해당 클래스 패키지가 시작 위치
+ * @SpringBootApplication을 프로젝트 시작 루트에 두는 것이 관례적
+ * @Component,@Controller,@Service,@Repository,@Configuration 모두 컴포넌트 스캔 대상이다.
+ * 
