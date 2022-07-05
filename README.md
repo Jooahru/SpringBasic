@@ -63,4 +63,5 @@
  * basePackages로 탐색위치(패키지) 지정 가능 지정하지 않으면 Default 해당 클래스 패키지가 시작 위치
  * @SpringBootApplication을 프로젝트 시작 루트에 두는 것이 관례적
  * @Component,@Controller,@Service,@Repository,@Configuration 모두 컴포넌트 스캔 대상이다.
- * 
+
+
