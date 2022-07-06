@@ -69,4 +69,26 @@
    * (그러나 현재는 디폴트 값으로 이름이 같으면 수동이든 자동이든 오류 발생)
    * spring.main.allow-bean-definition-overriding=true 설정시 가능
 
+## 의존관계 주입(@Autowired)
+ * 생성자 주입 
+   * 생성자를 통해서 의존 관계를 주입 받는 방식
+   * 생성자 호출시점에 딱 1번만 호출
+   * '불변,필수' 의존관계에 사용
+   * 생성자가 딱 1개면 @Autowired를 붙이지 않아도 자동주입된다.
+ * 수정자 주입(setter주입)
+   * setter라 불리는 필드의 값을 변경하는 수정자 메서드를 통해 주입
+   * 선택,변경 가능성이 있는 의존성 관계에 사용
+   * @Autowired는 주입할 대상이 없으면 오류 발생
+   * @Autowired(required= false)로 지정시 오류해결 가능
+ * 필드 주입
+   * 코드가 간결하지만 외부에서 변경이 불가능해 테스트하기 힘들다
+   * DI 프레임워크가 없으면 아무것도 할 수 없다.
+   * 최대한 사용지양
+     * 애플리케이션의 실제 코드와 관계없는 테스트코드
+     * 스프링 설정을 목적으로 하는 @Configuration 같은 곳에서만 특별한 용도로사용
+ * 일반 메서드 주입
+   * 일반 메서드를 통해서 주입 받는다
+   * 한번에 여러 필드를 주입 받을 수 있다 public void init(MemberRepository memberRepo, DiscountPolicy discountPoli);위에 @Autowired작성
+   * 일반적으로 잘 사용 하지 않음
+
 
