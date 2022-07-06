@@ -63,5 +63,10 @@
  * basePackages로 탐색위치(패키지) 지정 가능 지정하지 않으면 Default 해당 클래스 패키지가 시작 위치
  * @SpringBootApplication을 프로젝트 시작 루트에 두는 것이 관례적
  * @Component,@Controller,@Service,@Repository,@Configuration 모두 컴포넌트 스캔 대상이다.
+ * @Component 이름 중복 등록과 충돌
+   * 자동빈 등록일 때 이름이 중복되면 BeanDefinitionStoreException발생
+   * 수동빈 vs 자동빈 등록일 때 이름이 중복이면 수동빈 등록이 우선권을 가진다. 수동빈이 자동빈을 오버라이딩 한다.
+   * (그러나 현재는 디폴트 값으로 이름이 같으면 수동이든 자동이든 오류 발생)
+   * spring.main.allow-bean-definition-overriding=true 설정시 가능
 
 
