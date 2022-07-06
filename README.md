@@ -90,5 +90,8 @@
    * 일반 메서드를 통해서 주입 받는다
    * 한번에 여러 필드를 주입 받을 수 있다 public void init(MemberRepository memberRepo, DiscountPolicy discountPoli);위에 @Autowired작성
    * 일반적으로 잘 사용 하지 않음
-
+ *@Autowired 옵션
+   * required = false 주입할 대상 없으면 호출 되지 않음
+   * @Nullable 주입할 대상 없으면 null로 지정
+   * Optional<>: 자동 주입할 대상이 없으면 'Optional.empty'가 된다.
 
