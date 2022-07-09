@@ -3,6 +3,7 @@ package hello.core.order;
 import hello.core.Member.Member;
 import hello.core.Member.MemberRepository;
 import hello.core.Member.MemoryMemberRepository;
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
@@ -20,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
 
 //    @Autowired 생성자 하나일 때는 생략 가능
 // @RequiredArgsConstructor를 붙여서 자동 생성
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
