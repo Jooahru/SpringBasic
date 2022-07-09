@@ -98,3 +98,10 @@
 ### 생성자 주입방식을 사용하자
  * 프레임 워크에 의존하지 않고 순수한 자바 언어의 특징을 잘 살리는 방법
  * final과 함께사용시 테스트시 생성자 주입 하지 않으면 컴파일 오류 발생해서 바로 알 수있음
+
+## @Autowired 매칭
+ 1. 타입매칭
+ 2. 타입 매칭의 결과가 2개 이상일 때 필드 명, 파라미터 명으로 빈 이름 매칭(@Autowired 필드 명)
+ 3. @Qualifier - @Qualifier끼리 매칭, 빈이름매칭,'NosuchBeanDefinitionException 예외발생
+ 4. @Primary - @Autowired 여러개 매칭시 우선순위를 가지게 된다.
+ * 우선순위 @Primary보다 @Qualifier가 우선순위가 더 높다

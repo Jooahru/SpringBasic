@@ -8,10 +8,11 @@ import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor //final이 붙은 필수 값들로 생성자 만들어줌
+
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
@@ -19,10 +20,10 @@ public class OrderServiceImpl implements OrderService {
 
 //    @Autowired 생성자 하나일 때는 생략 가능
 // @RequiredArgsConstructor를 붙여서 자동 생성
-//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//        this.memberRepository = memberRepository;
-//        this.discountPolicy = discountPolicy;
-//    }
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
 
     @Override
