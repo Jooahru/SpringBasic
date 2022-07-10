@@ -105,3 +105,10 @@
  3. @Qualifier - @Qualifier끼리 매칭, 빈이름매칭,'NosuchBeanDefinitionException 예외발생
  4. @Primary - @Autowired 여러개 매칭시 우선순위를 가지게 된다.
  * 우선순위 @Primary보다 @Qualifier가 우선순위가 더 높다
+
+## 빈 생명주기 및 콜백시작
+ * 인터페이스 InitializingBean, DisposableBean
+   * 생성자 생성 후 InitializingBean(afterPropertiesSet()) 실행 //스프링종료전 DisposableBean(Destroy()) 실행
+   * 지금은 잘 사용하지 않음 
+   
+ * 
