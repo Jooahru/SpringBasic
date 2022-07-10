@@ -111,4 +111,9 @@
    * 생성자 생성 후 InitializingBean(afterPropertiesSet()) 실행 //스프링종료전 DisposableBean(Destroy()) 실행
    * 지금은 잘 사용하지 않음 
    
- * 
+ * 빈 등록 초기화, 소멸 메서드
+   * @Bean(initMethod = "init(메서드이름)", destoryMethod = "close(메서드이름)")
+   * 메서드 이름을 자유롭게 줄 수 있다.
+   * 스프링 빈이 스프링 코드에 의존하지 않는다
+   * 코드가 아니라 설정 정보를 사용하기 때문에 코드를 고칠 수 없는 외부라이브러리에도 적용 가능
+   * destoryMethod의 경우 close,shutdown이라는 이름의 메서드를 자동 호출해준다.
