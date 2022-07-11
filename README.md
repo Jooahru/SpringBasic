@@ -147,3 +147,12 @@
  * ObjectProvider 스프링 의존적 , 라이브러리 추가 필요없음
  * Provider(JSR330) 자바표준 라이브러리 추가 필요 스프링이 아닌 다른 컨테이너에서도 사용가능
 
+## 스코프와 프록시
+ * 프록시 설정시 CGLIB라는 라이브러리로 클래스를 상속받은 가짜 프록시 객체를 만ㄷ르어서 주입한다.
+ * 클래스일 경우 proxyMode = ScopedProxyMode.TARGET_CLASS
+ * 인터페이스일 경우 proxyMode = ScopedProxyMode.INTERFACES 
+ * 가짜 프록시 객체는 요청이 오면 그때 내부에서 진짜 빈을 요청
+
+## Provider와 프록시의 핵심
+ * 진짜 객체 조회를 꼭 필요한 시점까지 지연처리 
+
