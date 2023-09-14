@@ -11,20 +11,20 @@ public class MemberServiceTest {
     MemberService memberService;
 
     @BeforeEach //테스트 시작전 실행 시키는 함수
-    public  void beforeEach(){
+    public void beforeEach() {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
     }
 
-   // MemberService memberService = new MemberServiceImpl();
+    // MemberService memberService = new MemberServiceImpl();
 
     @Test
     void join() {
         //given
-        Member member = new Member(1L,"memberA", Grade.VIP);
+        Member member = new Member(1L, "memberA", Grade.VIP);
         //when
         memberService.join(member);
-Member findMember = memberService.findMember(1L);
+        Member findMember = memberService.findMember(1L);
         //then
         Assertions.assertThat(member).isEqualTo(findMember);
     }
