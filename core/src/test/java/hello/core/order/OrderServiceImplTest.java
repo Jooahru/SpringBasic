@@ -1,15 +1,12 @@
 package hello.core.order;
 
-import hello.core.Member.Grade;
-import hello.core.Member.Member;
-import hello.core.Member.MemberRepository;
-import hello.core.Member.MemoryMemberRepository;
+import hello.core.member.Grade;
+import hello.core.member.Member;
+import hello.core.member.MemoryMemberRepository;
 import hello.core.discount.FixDiscountPolicy;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceImplTest {
 
